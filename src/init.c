@@ -26,6 +26,9 @@ void R_init_cshared(DllInfo *dll)
 // even though we haven't done `#include utils.h`
 extern void cshared_init_utils();
 
+// All `cshared_init()` does is call our `cshared_init_utils()` function and
+// then return `NULL`. In a larger package we might have more to "initialize"
+// and `cshared_init()` might call more than just `cshared_init_utils()`.
 SEXP cshared_init() {
   cshared_init_utils();
   return R_NilValue;
