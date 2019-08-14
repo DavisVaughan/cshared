@@ -1,0 +1,25 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+# cshared
+
+cshared is the companion package to the blog post: [Persistant R Objects in C](https://blog.davisvaughan.com/2019/08/13/persistant-r-objects-in-c/).
+
+It allows you to create and persistantly use shared R global variables from C.
+
+```{r}
+library(cshared)
+get_shared_objects()
+```
+
