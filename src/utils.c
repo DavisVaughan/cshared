@@ -4,7 +4,7 @@
 // Initialize a global variable to hold the SEXP integer
 SEXP cshared_shared_empty_int = NULL;
 
-void cshared_init_utils() {
+SEXP cshared_init_utils() {
   // Overwrite our global variable with an empty integer
   cshared_shared_empty_int = Rf_allocVector(INTSXP, 0);
 
@@ -13,4 +13,6 @@ void cshared_init_utils() {
 
   // Ensure that we can't overwrite it later by mistake
   MARK_NOT_MUTABLE(cshared_shared_empty_int);
+
+  return R_NilValue;
 }
