@@ -22,6 +22,8 @@ void R_init_cshared(DllInfo *dll)
   R_useDynamicSymbols(dll, FALSE);
 }
 
+// Use `extern` to declare that we can find it _somewhere_ in the package
+// even though we haven't done `#include utils.h`
 extern void cshared_init_utils();
 
 SEXP cshared_init() {
